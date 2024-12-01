@@ -4,8 +4,10 @@
 	<title>Sobre mi</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-<body>
+<header>
 	<h1>Bienvenido a mi presentacion personal</h1>
+</header>
+<body>
 	<hr>
 	<h2>Este soy YO</h2>
 	<img src="yo.png">
@@ -14,6 +16,8 @@
 	<h2>Perfil</h2>
 	<p>Soy psicólogo con maestría en Psicología Clínica, Jurídica y Forense, experiencia en la evaluación e intervención psicológica de poblaciones vulnerables, incluyendo víctimas del conflicto armado, niños y adolescentes en situación de riesgo.Tengo habilidad para realización de diagnósticos clínicos, aplicación de pruebas psicológicas, elaboración de informes periciales y diseño de planes de intervención.
 </p>
+
+<div class="experiencia">
 <h2>Experiencia Profesional</h2>
 <ol>
 	<li>Universidad del Magdalena</li>
@@ -39,6 +43,7 @@
 		<li>Adaptar las intervenciones a las necesidades educativas y psicosociales de las víctimas del conflicto armado</li>
 		<li>Apoyar actividades de psicoeducación sobre la Paz y los acuerdos establecidos.</li>
 	</ul>
+
 </ol>
 <h2>Mi Pasatiempos</h2>
 <ul>
@@ -52,6 +57,7 @@
 	<li>Aprender de manera satisfactoria los verbos irregulares en ingles</li>
 	<li>Mejorar mi estrategias de aprendizaje</li>
 </ol>
+</div>
 <hr>
 <table border="1">
 	<h1>Horario</h1>
@@ -75,37 +81,50 @@
 	</tr>
 </table>
 <hr>
-<h1>Formulario</h1>
-<form>
-		<label>Nombre</label>
-		<input type="text" name="nombre">
-		<label>Correo electronico</label>
-		<input type="email" name="email">
+<div class="container" align="center">
+		<h1>Formulario de Contacto</h1>
+	<form>
+		<label>Nombre *</label>
+		<input type="text" name="nombre" required="">
+		<label>Correo electronico *</label>
+		<input type="email" name="email" required="">
 		<label>Celular</label>
 		<input type="tel" name="cel">
+		<label>Ingrese su contraseña *</label>
+		<input type="password" name="" required="" minlength="8">
 		<label>Porque desean contactarme</label>
-		<textarea></textarea>
+		<textarea id="mensaje" rows="4" maxlength="500"></textarea>
 		<label>País</label>
-		<select>
-			<option disabled="" selected="">Selecciona tu País</option>
+		<select required="">
+			<option value="" disabled="" selected="">Selecciona tu País *</option>
 			<option value="co">Colombia</option>
 			<option value="es">España</option>
 			<option value="mex">Mexico</option>
 			<option value="br">Argentina</option>
 		</select>
-		<input type="submit" name="" value="enviar">
+		<input type="submit" name="" value="Enviar">
+		<p> * campo requerido</p>
 	</form>
+	</div>
 <br>
 <hr>
+
+<div class="contacto">
 <h2>Contacto</h2>
 <p>Puedes contcatarme en <a href="http//www.johan.com">Mi Pagina Web</a></p>
+</div>
+
 <dl>
 	<dt>Atencion</dt>
 	<dd>El uso de esta pagina u hoja de vida es meramente didactico, por favor no usar en un contexto laboral real</dd>
 	<dt>Referencias</dt>
 	<dd>La informacion empleada es concebida apartir de las experiencias de vida del autor: Johan Eduardo Muñoz de la Rosa</dd>
 </dl>
-<br>
-<p>&copy; 2024 Mi presentacion personal</p>
+
+
 </body>
-</html>
+
+<footer>
+	<p>&copy; 2024 Mi presentacion personal</p>
+</footer>
+</html> 
