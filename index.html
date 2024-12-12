@@ -121,6 +121,93 @@
 	<dd>La informacion empleada es concebida apartir de las experiencias de vida del autor: Johan Eduardo Muñoz de la Rosa</dd>
 </dl>
 
+// Boton Dia/Noche JS
+	<style>
+        /* Modo claro */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --primary-color: #007bff;
+        }
+
+        /* Modo oscuro */
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f5f5f5;
+            --primary-color: #4caf50;
+        }
+
+        /* General del cuerpo */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Contenedor */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        /* Selectores */
+        select {
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--primary-color);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selector de Tema</h1>
+        <label for="theme-selector">Elige un tema:</label>
+        <select id="theme-selector">
+            <option value="light">Claro</option>
+            <option value="dark">Oscuro</option>
+            <option value="auto">Automático</option>
+        </select>
+    </div>
+
+    <script>
+        const themeSelector = document.getElementById('theme-selector');
+
+        function applyTheme(theme) {
+            if (theme === 'auto') {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+        }
+
+        // Escuchar cambios en el selector
+        themeSelector.addEventListener('change', (event) => {
+            const selectedTheme = event.target.value;
+            applyTheme(selectedTheme);
+            localStorage.setItem('selectedTheme', selectedTheme);
+        });
+
+        // Cargar el tema desde el almacenamiento local
+        const savedTheme = localStorage.getItem('selectedTheme') || 'auto';
+        themeSelector.value = savedTheme;
+        applyTheme(savedTheme);
+    </script>
+
 
 </body>
 
